@@ -3,12 +3,16 @@
     <router-view/>
     <!-- This is only example: -->
     <b-alert show>Default Alert</b-alert>
+    <VuexTest/>
   </div>
 </template>
 
 <script>
+import VuexTest from './components/VuexExample';
+
 export default {
   name: 'App',
+  components: { VuexTest },
 };
 </script>
 
