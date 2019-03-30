@@ -25,6 +25,7 @@ export default {
     ]),
   },
   mounted() {
+    // eslint-disable-next-line
     console.log(this.getWholeState.key1);
   },
 };
