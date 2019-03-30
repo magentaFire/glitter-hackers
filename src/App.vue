@@ -8,6 +8,12 @@
 <script>
 export default {
   name: 'App',
+  data :{
+
+  },
+  created:{
+    
+  }
 };
 </script>
 
