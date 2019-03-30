@@ -3,12 +3,16 @@
     <router-view/>
     <!-- This is only example: -->
     <b-alert show>Default Alert</b-alert>
+    <Register/>
+    
   </div>
 </template>
 
 <script>
+import Register from './components/Register';
 export default {
   name: 'App',
+  components:{ Register },
   data :{
 
   },
