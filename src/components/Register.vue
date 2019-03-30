@@ -22,7 +22,10 @@
         </b-form-group>
 
         <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
-          <b-form-input id="input-2" v-model="form.name" required placeholder="Enter name"></b-form-input>
+          <b-form-input
+            id="input-2"
+            v-model="form.name"
+            required placeholder="Enter name"></b-form-input>
         </b-form-group>
 
         <b-form-group id="input-group-3" label="Your password:" label-for="input-3">
@@ -50,19 +53,19 @@
 </template>
 
 <script>
-import firebase from "firebase";
+import firebase from 'firebase';
 
 export default {
-  name: "register",
+  name: 'register',
   data() {
     return {
       form: {
-        email: "",
-        name: "",
-        password: "",
-        checked: []
+        email: '',
+        name: '',
+        password: '',
+        checked: [],
       },
-      show: true
+      show: true,
     };
   },
   methods: {
@@ -72,20 +75,21 @@ export default {
         .auth()
         .createUserWithEmailAndPassword(this.form.email, this.form.password)
         .then(
-          user => {
+          (user) => {
+            console.log(user);
             this.$router.push('/test');
           },
-          err => {
+          (err) => {
             console.log(err.message);
-          }
+          },
         );
       // alert(JSON.stringify(this.form))
     },
     onReset(evt) {
       evt.preventDefault();
       // Reset our form values
-      this.form.email = "";
-      this.form.name = "";
+      this.form.email = '';
+      this.form.name = '';
       this.form.food = null;
       this.form.checked = [];
       // Trick to reset/clear native browser form validation state
@@ -93,7 +97,7 @@ export default {
       this.$nextTick(() => {
         this.show = true;
       });
-    }
-  }
+    },
+  },
 };
 </script>

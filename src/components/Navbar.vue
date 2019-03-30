@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand href="#">Logo</b-navbar-brand>
+      <b-navbar-brand href="/">Logo</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
@@ -21,7 +21,7 @@
             <!-- Using 'button-content' slot -->
             <template slot="button-content"><em>User</em></template>
             <b-dropdown-item href="#">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+            <b-dropdown-item href="#" @click="logout">Sign Out</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
@@ -31,37 +31,36 @@
 <script>
 import firebase from 'firebase';
 
-  export default {
-    name: 'navbar',
-    data() {
-      return {
-        register: true,
-        isLoggedIn: false,
-        currentUser: false,
-      };
+export default {
+  name: 'navbar',
+  data() {
+    return {
+      register: true,
+      isLoggedIn: false,
+      currentUser: false,
+    };
+  },
+  methods: {
+    toggleRegister(value) {
+      this.$emit('toggleRegister', value);
     },
-    methods: {
-      toggleRegister (value) {
-        this.$emit('toggleRegister', value)
-      },
-      logout() {
-        firebase.auth().signOut()
-        .then(()=>{
-          this.$router.push('/')
-        })
+    logout() {
+      firebase.auth().signOut()
+        .then(() => {
+          this.$router.push('/');
+          this.isLoggedIn = false;
+        });
+    },
+  },
+  mounted() {
+    firebase.auth().onAuthStateChanged((user) => {
+      console.log(user);
+      if (user) {
+        this.isLoggedIn = true;
+        this.$router.push('/profile');
       }
-    },
-    mounted() {
-      firebase.auth().onAuthStateChanged((user) => {
-        console.log(user);
-        if (user) {
-          this.isLoggedIn = true
-          this.$router.push('/profile');
-
-        }
-      })
-      
-    },
-  }
+    });
+  },
+};
 </script>
 
