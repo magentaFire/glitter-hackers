@@ -5,21 +5,24 @@
     <b-alert show>Default Alert</b-alert>
     <Register/>
     
+    <VuexTest/>
   </div>
 </template>
 
 <script>
+import VuexTest from './components/VuexExample';
 import Register from './components/Register';
 export default {
   name: 'App',
-  components:{ Register },
+  components:{ Register, VuexTest },
   data :{
 
   },
   created:{
     
   }
-};
+}
+
 </script>
 
 <style>
