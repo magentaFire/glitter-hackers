@@ -1,4 +1,5 @@
 # glitter-hackers
+<<<<<<< HEAD
 
 > hackeando la desigualdad project
 
@@ -19,3 +20,6 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+glitter hackers project
+>>>>>>> 2e47f95e7b5c13122a2a8e00c02b2e6ab3c8a6b3
