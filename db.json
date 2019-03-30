@@ -1,0 +1,90 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Blanca",
+      "industry": "IT",
+      "role": "front end developer",
+      "email": "blanca@gmail.com",
+      "hard_skills": {
+        "typescript": 100,
+        "node js": 100,
+        "rest": 100,
+        "html": 100,
+        "javascript": 100,
+        "git": 100
+      },
+      "soft_skills": {
+        "creatividad": 100,
+        "mejorar": 100,
+        "adaptabilidad": 100,
+        "pensamiento critico": 100,
+        "trabajo en equipo": 100,
+        "empatia": 100
+      }
+    }
+  ],
+  "goals": [
+    {
+      "id": 1,
+      "goals": ["ceo", "leader", "angular_developer"]
+    }
+  ],
+  "profiles": [{
+    "type": "profile",
+    "id": 1234567890,
+    "name": "angular_developer",
+    "hard_skills": {
+      "typescript": {
+        "value": 100,
+        "weight": 100
+      },
+      "node js": {
+        "value": 100,
+        "weight": 100
+      },
+      "rest": {
+        "value": 100,
+        "weight": 100
+      },
+      "html": {
+        "value": 100,
+        "weight": 100
+      },
+      "javascript": {
+        "value": 100,
+        "weight": 100
+      },
+      "git": {
+        "value": 100,
+        "weight": 100
+      }
+    },
+    "soft_skills": {
+      "creatividad": {
+        "value": 100,
+        "weight": 100
+      },
+      "mejorar": {
+        "value": 100,
+        "weight": 100
+      },
+      "adaptabilidad": {
+        "value": 100,
+        "weight": 100
+      },
+      "pensamiento critico": {
+        "value": 100,
+        "weight": 100
+      },
+      "trabajo en equipo": {
+        "value": 100,
+        "weight": 100
+      },
+      "empatia": {
+        "value": 100,
+        "weight": 100
+      }
+    }
+  }]
+}
