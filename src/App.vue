@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
+    <!-- This is only example: -->
+    <b-alert show>Default Alert</b-alert>
   </div>
 </template>
 
