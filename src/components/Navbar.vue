@@ -9,10 +9,10 @@
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
 
-          <b-navbar-nav>
+          <b-navbar-nav v-if="!isLoggedIn">
             <!-- <span @click="toggleRegister(true)" >Registro</span> -->
-            <b-nav-item @click="toggleRegister(true)">Registro</b-nav-item>
-            <b-nav-item @click="toggleRegister(false)">Login</b-nav-item>
+            <b-nav-item @click="toggleRegister(true)"><router-link to="/register">Registro</router-link></b-nav-item>
+            <b-nav-item @click="toggleRegister(false)"><router-link to="/login">Login</router-link></b-nav-item>
             <!-- <span @click="toggleRegister(false)">Login</span> -->
 
           </b-navbar-nav>
@@ -29,6 +29,8 @@
   </div>
 </template>
 <script>
+import firebase from 'firebase';
+
   export default {
     name: 'navbar',
     data() {
@@ -41,7 +43,24 @@
     methods: {
       toggleRegister (value) {
         this.$emit('toggleRegister', value)
+      },
+      logout() {
+        firebase.auth().signOut()
+        .then(()=>{
+          this.$router.push('/')
+        })
       }
+    },
+    mounted() {
+      firebase.auth().onAuthStateChanged((user) => {
+        console.log(user);
+        if (user) {
+          this.isLoggedIn = true
+          this.$router.push('/profile');
+
+        }
+      })
+      
     },
   }
 </script>

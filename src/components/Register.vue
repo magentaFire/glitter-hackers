@@ -73,7 +73,7 @@ export default {
         .createUserWithEmailAndPassword(this.form.email, this.form.password)
         .then(
           user => {
-            console.log(user);
+            this.$router.push('/test');
           },
           err => {
             console.log(err.message);
