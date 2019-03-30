@@ -9,7 +9,7 @@
       right
     >
 
-      <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+      <b-form @submit="login" @reset="onReset" v-if="show">
         <b-form-group
           id="input-group-1"
           label="Email address:"
@@ -28,9 +28,9 @@
         <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
           <b-form-input
           id="input-2"
-          v-model="form.name"
+          v-model="form.password"
           required
-          placeholder="Enter name">
+          placeholder="Enter password">
           </b-form-input>
         </b-form-group>
   <!-- 
@@ -49,23 +49,35 @@
 </template>
 
 <script>
+import firebase from 'firebase';
+
 export default {
   name: 'login',
-  data() {
+    data() {
     return {
       form: {
-        email: '',
-        name: '',
-        food: null,
-        checked: [],
+        email: "",
+        password: "",
       },
-      show: true,
+      show: true
     };
   },
   methods: {
-    onSubmit(evt) {
+    login(evt) {
       evt.preventDefault();
-      alert(JSON.stringify(this.form));
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.form.email, this.form.password)
+        .then(
+          (user) => {
+            console.log(user);
+            this.$router.push('/profile');
+          },
+          (err) => {
+            console.log(err.message);
+          }
+        );
+      // alert(JSON.stringify(this.form))
     },
     onReset(evt) {
       evt.preventDefault();
@@ -80,6 +92,6 @@ export default {
         this.show = true;
       });
     },
-  },
+   },
 };
 </script>
