@@ -1,5 +1,5 @@
 <template>
-  <div>      
+  <div>
     <b-card
       title="Login"
       img-top
@@ -28,12 +28,13 @@
         <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
           <b-form-input
           id="input-2"
+          type="password"
           v-model="form.password"
           required
           placeholder="Enter password">
           </b-form-input>
         </b-form-group>
-  <!-- 
+  <!--
         <b-form-group id="input-group-4">
           <b-form-checkbox-group v-model="form.checked" id="checkboxes-4">
             <b-form-checkbox value="me">Check me out</b-form-checkbox>
@@ -53,13 +54,13 @@ import firebase from 'firebase';
 
 export default {
   name: 'login',
-    data() {
+  data() {
     return {
       form: {
-        email: "",
-        password: "",
+        email: '',
+        password: '',
       },
-      show: true
+      show: true,
     };
   },
   methods: {
@@ -75,7 +76,7 @@ export default {
           },
           (err) => {
             console.log(err.message);
-          }
+          },
         );
       // alert(JSON.stringify(this.form))
     },
@@ -92,6 +93,6 @@ export default {
         this.show = true;
       });
     },
-   },
+  },
 };
 </script>

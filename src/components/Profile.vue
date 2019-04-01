@@ -12,13 +12,13 @@
           Puedes completar las siguientes encuentas para mejorar tus predicciones
           y/o actualizar tus objetivos:
           <br>
-          <a href="">Qué tan comprometida eres?</a>
+          <a href="/test">Qué tan comprometida eres?</a>
           <br>
-          <a href="">Qué tan responsable eres?</a>
+          <a href="/test">Qué tan responsable eres?</a>
           <br>
-          <a href="">Eres buena trabajando en equipo o mejor en solitario?</a>
+          <a href="/test">Eres buena trabajando en equipo o mejor en solitario?</a>
           <br>
-          <a href="">Te comportas mejor en un remoto opresencial?</a>
+          <a href="/test">Te comportas mejor en un remoto opresencial?</a>
         </p>
       </b-container>
   </div>

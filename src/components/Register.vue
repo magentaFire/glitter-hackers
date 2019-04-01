@@ -77,7 +77,7 @@ export default {
         .then(
           (user) => {
             console.log(user);
-            this.$router.push('/test');
+            this.$router.push({ name: 'test' });
           },
           (err) => {
             console.log(err.message);

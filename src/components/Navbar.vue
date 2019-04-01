@@ -54,7 +54,6 @@ export default {
   },
   mounted() {
     firebase.auth().onAuthStateChanged((user) => {
-      console.log(user);
       if (user) {
         this.isLoggedIn = true;
         this.$router.push('/profile');
