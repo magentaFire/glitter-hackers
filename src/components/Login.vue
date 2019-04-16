@@ -70,12 +70,10 @@ export default {
         .auth()
         .signInWithEmailAndPassword(this.form.email, this.form.password)
         .then(
-          (user) => {
-            console.log(user);
+          () => {
             this.$router.push('/profile');
           },
-          (err) => {
-            console.log(err.message);
+          () => {
           },
         );
       // alert(JSON.stringify(this.form))

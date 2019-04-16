@@ -11,8 +11,12 @@
 
           <b-navbar-nav v-if="!isLoggedIn">
             <!-- <span @click="toggleRegister(true)" >Registro</span> -->
-            <b-nav-item @click="toggleRegister(true)"><router-link to="/register">Registro</router-link></b-nav-item>
-            <b-nav-item @click="toggleRegister(false)"><router-link to="/login">Login</router-link></b-nav-item>
+            <b-nav-item @click="toggleRegister(true)">
+              <router-link to="/register">Registro</router-link>
+            </b-nav-item>
+            <b-nav-item @click="toggleRegister(false)">
+              <router-link to="/login">Login</router-link>
+            </b-nav-item>
             <!-- <span @click="toggleRegister(false)">Login</span> -->
 
           </b-navbar-nav>
